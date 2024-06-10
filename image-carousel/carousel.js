@@ -1,4 +1,12 @@
 let currentImg = 1;
+let intervalId;
+
+export function resetInterval(carousel) {
+    if (intervalId) {
+        clearInterval(intervalId);
+    }
+    intervalId = setInterval(autoDisplacement, 5000, carousel, 4);
+}
 
 export function arrowDisplacement(rightArrow, leftArrow, carousel, numberOfImages){
     rightArrow.addEventListener("click", () => {
@@ -13,6 +21,7 @@ export function arrowDisplacement(rightArrow, leftArrow, carousel, numberOfImage
             carousel.classList.add(`image-${currentImg}`);
             addCurrentDot(currentImg);
         }
+        resetInterval(carousel);
     })
 
     leftArrow.addEventListener("click", () => {
@@ -27,6 +36,7 @@ export function arrowDisplacement(rightArrow, leftArrow, carousel, numberOfImage
             carousel.classList.add(`image-${currentImg}`);
             addCurrentDot(currentImg);
         }
+        resetInterval(carousel);
     })
 } 
 
@@ -38,8 +48,23 @@ export function dotDisplacement(dots, carousel){
             currentImg = parseInt(dot.getAttribute("img-number"));
             dot.classList.add("current-dot");
             carousel.classList.add(`image-${currentImg}`);
+            resetInterval(carousel);
         })
     })
+}
+
+function autoDisplacement(carousel, numberOfImages){
+    carousel.classList.remove(`image-${currentImg}`);
+        removeCurrentDot(currentImg);
+        if(currentImg + 1 > numberOfImages){
+            currentImg = 1;
+            carousel.classList.add(`image-${currentImg}`);
+            addCurrentDot(currentImg);
+        }else{
+            currentImg ++;
+            carousel.classList.add(`image-${currentImg}`);
+            addCurrentDot(currentImg);
+        }
 }
 
 function removeCurrentDot(currentImg){
