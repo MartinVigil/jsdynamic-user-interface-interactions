@@ -1,0 +1,69 @@
+.container{
+    display: grid;
+    height: 98vh;
+}
+
+.carousel{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-self: center;
+    background-color: grey;
+    width: 50rem;
+    height: 30rem;
+}
+
+.arrows-container{
+    display: flex;
+    height: 90%;
+    align-items: center;
+    padding-top: 4%;
+    justify-content: center;
+    gap: 85%;
+}
+
+.dots-container{
+    display: flex;
+    justify-content: center;
+    background-color: rgba(128, 128, 128, 0.600);
+}
+
+.arrows-container > img{
+    width: 3rem;
+    height: 3rem;
+    filter: invert();
+}
+
+.dots-container > img{
+    width: 3rem;
+    height: 3rem;
+    align-self: center;
+}
+
+.dots-container > .current-dot{
+    width: 4rem;
+    height: 4rem;
+    filter: invert();
+}
+
+.image-1{
+    background-image: url(assets/images/1.jpg);
+}
+
+.image-2{
+    background-image: url(assets/images/2.jpg);
+}
+
+.image-3{
+    background-image: url(assets/images/3.jpg);
+}
+
+.image-4{
+    background-image: url(assets/images/4.jpg);
+}
+
+.image{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
