@@ -1,0 +1,64 @@
+.display-menu-btn{
+    width: 2.3rem;
+    height: 2rem;
+    border-style: solid;
+    border-radius: 15%;
+    border-color: rgba(0, 0, 0, 0.2);
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    margin-left: 5%;
+}
+
+img{
+    width: 1.5rem;
+    height: 2rem;
+}
+
+.container{
+    background-color: black;
+    border-radius: 0.5rem;
+    width: 10rem;
+}
+
+.display-menu-btn-container{
+    width: 10rem;
+    height: 2.5rem;
+    align-content: center;
+}
+
+.menu-container{
+    width: 10rem;
+    display: grid;
+    grid-template: 2rem 2rem 2rem / 1fr 1fr;
+}
+
+.menu-container > a{
+    color: white;
+    text-decoration: none;
+    margin-left: 12%;
+}
+
+.menu-container > button{
+    display: grid;
+    padding: 0%;
+    grid-column: 2/3;
+    grid-row: 1/4;
+    width: 1.23rem;
+    height: 1.23rem;
+    justify-self: end;
+    margin-right: 10%;
+    align-content: center;
+}
+
+.menu-container > button > p{
+    margin: 0%;
+}
+
+.invisible{
+    display: none;
+}
+
+.visible{
+    display: auto;
+}
